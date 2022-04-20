@@ -287,15 +287,12 @@ public class SwiftFlutterFacebookSdkPlugin: NSObject, FlutterPlugin, FlutterStre
             }
 
         case "getAnonymousId":
-            handleHandleGetAnonymousId(call, result: result)
-            break
+            result(AppEvents.anonymousID)
+            
         default:
             result(FlutterMethodNotImplemented)
         }
         
     }
 
-    private func handleHandleGetAnonymousId(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        result(AppEvents.anonymousID)
-    }
 }
